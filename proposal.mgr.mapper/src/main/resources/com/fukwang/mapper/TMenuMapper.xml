@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fukwang.mapper.TMenuMapper">
+    <sql id="base">
+        menu_id, menu_name, menu_url, menu_state, menu_pid, menu_icon, gmt_create, gmt_modified
+    </sql>
+<!--    <insert id="insertMenu">-->
+<!--        insert into terrace_menu (menu_name, menu_url, menu_pid, menu_icon) values-->
+<!--        (#{menuName}, #{menuUrl}, #{menuPid}, #{menuIcon});-->
+<!--    </insert>-->
+<!--    <delete id="delMenu">-->
+<!--        delete from terrace_menu where menu_id = #{menuId};-->
+<!--    </delete>-->
+    <sql id="set_base">
+        <set>
+            <if test="menuName != null">
+                menu_name = #{menuName},
+            </if>
+            <if test="menuUrl != null">
+                menu_url = #{menuUrl},
+            </if>
+            <if test="menuState != null">
+                menu_state = #{menuState},
+            </if>
+            <if test="menuPid != null">
+                menu_pid = #{menuPid},
+            </if>
+            <if test="menuIcon != null">
+                menu_icon = #{menuIcon},
+            </if>
+        </set>
+    </sql>
+<!--    <update id="updateMenu">-->
+<!--        update terrace_menu-->
+<!--        <include refid="set_base"></include>-->
+<!--        where-->
+<!--        menu_id = #{menuId};-->
+<!--    </update>-->
+<!--    <select id="selectByRoleMenuInfos" resultType="org.vem.pojo.TerraceMenu">-->
+<!--        select-->
+<!--        <include refid="base"></include>-->
+<!--        from terrace_menu-->
+<!--        where-->
+<!--        menu_id in-->
+<!--        <foreach collection="terraceRoleMenuList" item="item" open="(" close=")" separator=",">-->
+<!--            #{item.menuId}-->
+<!--        </foreach>-->
+<!--    </select>-->
+<!--    <select id="selectByPid" resultType="org.vem.pojo.TerraceMenu">-->
+<!--        select-->
+<!--        <include refid="base"></include>-->
+<!--        from terrace_menu where menu_id in (select menu_pid from terrace_menu where menu_pid != 0);-->
+<!--    </select>-->
+<!--    <select id="selectByPid2" resultType="org.vem.pojo.TerraceMenu">-->
+<!--        select-->
+<!--        <include refid="base"></include>-->
+<!--        from terrace_menu where menu_id in (select menu_pid from terrace_menu where menu_pid = #{menuPid});-->
+<!--    </select>-->
+<!--    <sql id="select_menu">-->
+<!--        <where>-->
+<!--            <if test="tMenu.menuName != null">-->
+<!--                and menu_name like CONCAT('%', #{tMenu.menuName}, '%')-->
+<!--            </if>-->
+<!--            <if test="tMenu.menuPid != null">-->
+<!--                and menu_pid = #{tMenu.menuPid}-->
+<!--            </if>-->
+<!--            <if test="tMenu.menuState != null">-->
+<!--                and menu_state = #{tMenu.menuState}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </sql>-->
+<!--    <select id="selectMenuList" resultType="com.fukwang.pojo.TMenu">-->
+<!--        select-->
+<!--        <include refid="base"></include>-->
+<!--        from t_menu-->
+<!--        <include refid="select_menu"></include>-->
+<!--        limit #{pageQo.limit} offset #{pageQo.start}-->
+
+<!--    </select>-->
+<!--    <select id="countMenuList" resultType="java.lang.Integer">-->
+<!--        select-->
+<!--        count(0)-->
+<!--        from terrace_menu-->
+<!--        <include refid="select_menu"></include>-->
+<!--    </select>-->
+<!--    <select id="selectAllRole"   resultType="org.vem.pojo.TerraceRole">-->
+<!--        select  * from terrace_role-->
+<!--    </select>-->
+    <select id="selectMenuByRoleId" resultType="com.fukwang.pojo.TMenu">
+       SELECT    t_menu.* FROM t_menu,t_role,t_role_menu
+       WHERE t_role.role_id = t_role_menu.role_id
+       AND  t_menu.menu_id=t_role_menu.menu_id
+       AND t_role.role_id= #{menuId}
+    </select>
+
+    <select  id="selectAllMenu" resultType="com.fukwang.pojo.TMenu">
+      SELECT  * FROM t_menu where menu_id not in  ( SELECT   t_menu.menu_id FROM t_menu,t_role,t_role_menu
+       WHERE t_role.role_id = t_role_menu.role_id
+       AND  t_menu.menu_id=t_role_menu.menu_id
+       AND t_role.role_id=#{roleId})
+
+    </select>
+    <select id="selectPidMenu" resultType="com.fukwang.pojo.TMenu">
+
+       select  * from  t_menu
+
+    </select>
+
+    <delete id="deleteRmMenu">
+      DELETE from t_role_menu WHERE role_id=#{roleId} AND menu_id = #{menuId}
+    </delete>
+
+    <insert id="addRmMenu" >
+      INSERT into t_role_menu VALUES(null,#{roleId},#{menuId})
+
+    </insert>
+
+</mapper>

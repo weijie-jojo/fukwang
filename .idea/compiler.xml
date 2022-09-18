@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="proposal.app.service" />
+        <module name="proposal.entity" />
+        <module name="proposal.app.handler" />
+        <module name="proposal.mgr.mapper" />
+        <module name="proposal.mgr.service" />
+        <module name="proposal.app.mapper" />
+        <module name="proposal.mgr.handler" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="proposal.app.handler" options="-parameters" />
+      <module name="proposal.app.mapper" options="-parameters" />
+      <module name="proposal.app.service" options="-parameters" />
+      <module name="proposal.entity" options="-parameters" />
+      <module name="proposal.mgr.handler" options="-parameters" />
+      <module name="proposal.mgr.mapper" options="-parameters" />
+      <module name="proposal.mgr.service" options="-parameters" />
+    </option>
+  </component>
+</project>

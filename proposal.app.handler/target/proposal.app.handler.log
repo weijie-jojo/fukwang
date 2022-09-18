@@ -1,0 +1,50 @@
+nohup: ignoring input
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.5)
+
+2022-01-06 14:01:49.975  INFO 11549 --- [           main] com.fukwang.AppBoot                      : Starting AppBoot v1.0.0 using Java 1.8.0_271 on Weijie with PID 11549 (/jar/proposal.app.handler.jar started by root in /jar)
+2022-01-06 14:01:49.979  INFO 11549 --- [           main] com.fukwang.AppBoot                      : No active profile set, falling back to default profiles: default
+开始配置错误页面
+2022-01-06 14:01:55.040  INFO 11549 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 11002 (http)
+2022-01-06 14:01:55.088  INFO 11549 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-06 14:01:55.088  INFO 11549 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2022-01-06 14:01:55.284  INFO 11549 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-06 14:01:55.284  INFO 11549 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5067 ms
+log4j:ERROR Could not find value for key log4j.appender.D
+log4j:ERROR Could not instantiate appender named "D".
+log4j:ERROR Could not find value for key log4j.appender.E
+log4j:ERROR Could not instantiate appender named "E".
+[DEBUG] 2022-01-06 14:01:55,951 method:org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)
+Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG] 2022-01-06 14:01:56,235 method:org.mybatis.logging.Logger.debug(Logger.java:49)
+Registered plugin: 'com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor@4c309d4d'
+[DEBUG] 2022-01-06 14:01:56,236 method:org.mybatis.logging.Logger.debug(Logger.java:49)
+Registered plugin: 'com.github.yulichang.interceptor.MPJInterceptor@38102d01'
+[DEBUG] 2022-01-06 14:01:56,248 method:org.mybatis.logging.Logger.debug(Logger.java:49)
+Property 'mapperLocations' was not specified.
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.4.3.2 
+[WARN ] 2022-01-06 14:01:56,409 method:com.baomidou.mybatisplus.core.metadata.TableInfoHelper.initTableFields(TableInfoHelper.java:332)
+Can not find table primary key in Class: "com.fukwang.pojo.AdminLog".
+[WARN ] 2022-01-06 14:01:56,411 method:com.baomidou.mybatisplus.core.injector.DefaultSqlInjector.getMethodList(DefaultSqlInjector.java:57)
+class com.fukwang.pojo.AdminLog ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+[WARN ] 2022-01-06 14:01:57,406 method:com.baomidou.mybatisplus.core.metadata.TableInfoHelper.initTableFields(TableInfoHelper.java:332)
+Can not find table primary key in Class: "com.fukwang.pojo.TProposal".
+[WARN ] 2022-01-06 14:01:57,407 method:com.baomidou.mybatisplus.core.injector.DefaultSqlInjector.getMethodList(DefaultSqlInjector.java:57)
+class com.fukwang.pojo.TProposal ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+[WARN ] 2022-01-06 14:01:57,695 method:com.baomidou.mybatisplus.core.metadata.TableInfoHelper.initTableFields(TableInfoHelper.java:332)
+Can not find table primary key in Class: "com.fukwang.pojo.TCompany".
+[WARN ] 2022-01-06 14:01:57,695 method:com.baomidou.mybatisplus.core.injector.DefaultSqlInjector.getMethodList(DefaultSqlInjector.java:57)
+class com.fukwang.pojo.TCompany ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+[WARN ] 2022-01-06 14:01:57,932 method:com.baomidou.mybatisplus.core.metadata.TableInfoHelper.initTableFields(TableInfoHelper.java:332)
+Can not find table primary key in Class: "com.fukwang.pojo.TDepartment".
+[WARN ] 2022-01-06 14:01:57,933 method:com.baomidou.mybatisplus.core.injector.DefaultSqlInjector.getMethodList(DefaultSqlInjector.java:57)
+class com.fukwang.pojo.TDepartment ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.

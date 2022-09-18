@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>proposal</artifactId>
+        <groupId>com.fukwang</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <groupId>com.fukwang</groupId>
+    <artifactId>proposal.entity</artifactId>
+    <version>1.0.0</version>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+
+        <!--junit-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <!--spring-starter-web-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--log4j依赖文件-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <!--mysql的依赖文件， 注意：连接池的依赖也不用，springboot自带最好的连接池-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.26</version>
+        </dependency>
+        <!--    mybatis的依赖+mybatis+springboot的依赖-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <!--mybatis-plus-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.3.2</version>
+        </dependency>
+        <!--mybatis-plus-join-->
+        <dependency>
+            <groupId>com.github.yulichang</groupId>
+            <artifactId>mybatis-plus-join</artifactId>
+            <version>1.2.0.Beta5</version>
+        </dependency>
+
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--fastjson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.78</version>
+        </dependency>
+        <!--文件上传-->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <!-- 封装了必要的io功能 -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+        <!-- SpringBoot Redis相关依赖 -->
+        <!--    &lt;!&ndash; 启动器 &ndash;&gt;-->
+        <!--    <dependency>-->
+        <!--      <groupId>org.springframework.boot</groupId>-->
+        <!--      <artifactId>spring-boot-starter-data-redis</artifactId>-->
+        <!--    </dependency>-->
+        <!--    &lt;!&ndash; session &ndash;&gt;-->
+        <!--    <dependency>-->
+        <!--      <groupId>org.springframework.session</groupId>-->
+        <!--      <artifactId>spring-session-data-redis</artifactId>-->
+        <!--    </dependency>-->
+        <!--    &lt;!&ndash; 连接池 &ndash;&gt;-->
+        <!--    <dependency>-->
+        <!--      <groupId>redis.clients</groupId>-->
+        <!--      <artifactId>jedis</artifactId>-->
+        <!--    </dependency>-->
+        <!--    <dependency>-->
+        <!--      <groupId>org.apache.commons</groupId>-->
+        <!--      <artifactId>commons-pool2</artifactId>-->
+        <!--    </dependency>-->
+
+
+    </dependencies>
+
+    <build>
+        <finalName>proposal.entity</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+</project>
