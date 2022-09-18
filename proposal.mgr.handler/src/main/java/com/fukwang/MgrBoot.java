@@ -19,6 +19,6 @@ public class MgrBoot {
 
         SpringApplication.run(MgrBoot.class,args);
 
-        System.out.println("hello proposal!!!");
+        System.out.println("hello proposal11111!!!");
     }
 }
